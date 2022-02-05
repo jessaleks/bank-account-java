@@ -20,8 +20,7 @@ class BankAccount {
         return this.balance;
     }
 
-    public void setBalance(int balance) throws BankAccountActionInvalidException {
-        checkIfAmountPositive(balance);
+    private void setBalance(int balance) {
         this.balance = balance;
     }
 
