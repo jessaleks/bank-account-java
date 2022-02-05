@@ -41,10 +41,10 @@ class BankAccount {
     public synchronized void withdraw(int amount) throws BankAccountActionInvalidException {
         checkIfAccountOpen();
         checkIfAmountPositive(amount);
-        if (getBalance() == 0) {
+        if (this.balance == 0) {
             throw new BankAccountActionInvalidException("Cannot withdraw money from an empty account");
         }
-        if (amount > getBalance()) {
+        if (amount > this.balance) {
             throw new BankAccountActionInvalidException("Cannot withdraw more money than is currently in the account");
         }
         setBalance(getBalance() - amount);
